@@ -55,19 +55,19 @@ pl000_3 = expand_momentum_list(pl000,3)
 ## generators
 a1m_000 = [np.array([[1.]])]*2 +[np.array([[-1.]])] ## for quick parity change
 a1p_000 = [np.array([[1.]])]*3
-a1p_100 = [rep_matrix_mom(pl100,x) for x in [r12v,r23v,ppv]]
-a1p_110 = [rep_matrix_mom(pl110,x) for x in [r12v,r23v,ppv]]
-aap_111 = [rep_matrix_mom(pl111,x) for x in [r12v,r23v,ppv]]
-aap_210 = [rep_matrix_mom(pl210,x) for x in [r12v,r23v,ppv]]
-aap_211 = [rep_matrix_mom(pl211,x) for x in [r12v,r23v,ppv]]
-aa0_321 = [rep_matrix_mom(pl321,x) for x in [r12v,r23v,ppv]]
+a1x_100 = [rep_matrix_mom(pl100,x) for x in [r12v,r23v,ppv]]
+a1x_110 = [rep_matrix_mom(pl110,x) for x in [r12v,r23v,ppv]]
+a1x_111 = [rep_matrix_mom(pl111,x) for x in [r12v,r23v,ppv]]
+a1x_210 = [rep_matrix_mom(pl210,x) for x in [r12v,r23v,ppv]]
+a1x_211 = [rep_matrix_mom(pl211,x) for x in [r12v,r23v,ppv]]
+a1x_321 = [rep_matrix_mom(pl321,x) for x in [r12v,r23v,ppv]]
 ## turn these generators into momentum irreps
-rep_a1p_100 = rep_object(a1p_100,pl100,irrepTag='100_a1+')
-rep_a1p_110 = rep_object(a1p_110,pl110,irrepTag='110_a1+')
-rep_aap_111 = rep_object(aap_111,pl111,irrepTag='111_aa+')
-rep_aap_210 = rep_object(aap_210,pl210,irrepTag='210_aa+')
-rep_aap_211 = rep_object(aap_211,pl211,irrepTag='211_aa+')
-rep_aa0_321 = rep_object(aa0_321,pl321,irrepTag='321_aa0')
+rep_a1x_100 = rep_object(a1x_100,pl100,irrepTag='100_a1+')
+rep_a1x_110 = rep_object(a1x_110,pl110,irrepTag='110_a1+')
+rep_a1x_111 = rep_object(a1x_111,pl111,irrepTag='111_aa+')
+rep_a1x_210 = rep_object(a1x_210,pl210,irrepTag='210_aa+')
+rep_a1x_211 = rep_object(a1x_211,pl211,irrepTag='211_aa+')
+rep_a1x_321 = rep_object(a1x_321,pl321,irrepTag='321_aa0')
 
 ## make trivial 0 momentum irreps into rep_objects
 rep_a1p_000 = rep_object(a1p_000,pl000,irrepTag='000_a1+')
@@ -126,12 +126,12 @@ switch_gamma_herm_sign= {
 
 switch_momentum_rep = {
  classify_momentum_type(reference_momentum(p000)): rep_a1p_000,
- classify_momentum_type(reference_momentum(p100)): rep_a1p_100,
- classify_momentum_type(reference_momentum(p110)): rep_a1p_110,
- classify_momentum_type(reference_momentum(p111)): rep_aap_111,
- classify_momentum_type(reference_momentum(p210)): rep_aap_210,
- classify_momentum_type(reference_momentum(p211)): rep_aap_211,
- classify_momentum_type(reference_momentum(p321)): rep_aa0_321 }
+ classify_momentum_type(reference_momentum(p100)): rep_a1x_100,
+ classify_momentum_type(reference_momentum(p110)): rep_a1x_110,
+ classify_momentum_type(reference_momentum(p111)): rep_a1x_111,
+ classify_momentum_type(reference_momentum(p210)): rep_a1x_210,
+ classify_momentum_type(reference_momentum(p211)): rep_a1x_211,
+ classify_momentum_type(reference_momentum(p321)): rep_a1x_321 }
 
 ## list of fields to test for classes
 allowed_arguments = set(['gamma','reference_momentum','antiquark_flavor','quark_flavor',\
