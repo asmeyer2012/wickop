@@ -134,7 +134,7 @@ def construct_lgevec_h000(pgen,i):
  ev2 = [ev2[:,i:i+1] for i in range(ev2.shape[1])]
  ev3 = [ev3[:,i:i+1] for i in range(ev3.shape[1])]
  ev1 = [y* inverse_phase(x,y,pgen[1],I*np.sqrt(1./8.)) for x,y in zip(ev0,ev1)]
- ev2 = [y* inverse_phase(x,y,pgen[1],  np.sqrt(3./8.)) for x,y in zip(ev0,ev2)]
+ ev2 = [y* inverse_phase(x,y,pgen[1], -np.sqrt(3./8.)) for x,y in zip(ev0,ev2)]
  ev3 = [y* inverse_phase(x,y,pgen[1],I*np.sqrt(3./8.)) for x,y in zip(ev0,ev3)]
  ev = [chop(np.hstack([w,x,y,z])) for w,x,y,z in zip(ev0,ev1,ev2,ev3)]
  return ev
