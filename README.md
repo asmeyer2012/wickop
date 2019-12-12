@@ -5,17 +5,34 @@ This code is intended to interface with the Wick contractor code written by C. L
 
 ## Getting Started
 
-Documentation to follow.
-For now, we refer the user to code available in reference\_reps.py and class\_isospin\_scribe.py
-.
+The documentation for wickop is available on arXiv: <https://arxiv.org/abs/1912.04917>.
 
 ## Citations
 
 Please check the README.md file in the online wickop repository for the most recent citation notice.
 
-If you have used this program in a publishable work, please cite the following reference:
+If you have used this program in a publishable work, please cite the documentation:
 
-Meyer, Aaron S. "wickop," <https://github.com/asmeyer2012/wickop>.
+<pre>
+%\cite{Meyer:2019axz}
+\bibitem{Meyer:2019axz}
+  A.~S.~Meyer,
+  ``wickop: Lattice Cubic Rotation Operator Generator,''
+  arXiv:1912.04917 [hep-lat].
+  %%CITATION = ARXIV:1912.04917;%%
+</pre>
+
+<pre>
+@article{Meyer:2019axz,
+      author         = "Meyer, Aaron S.",
+      title          = "{wickop: Lattice Cubic Rotation Operator Generator}",
+      year           = "2019",
+      eprint         = "1912.04917",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-lat",
+      SLACcitation   = "%%CITATION = ARXIV:1912.04917;%%"
+}
+</pre>
 
 ## Prerequisites
 

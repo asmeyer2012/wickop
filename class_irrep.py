@@ -245,6 +245,22 @@ class rep_object:
   ## return
   return tagList
 
+ ## get a list of clean rep_objects with no daughters from this rep_object
+ ## these objects can be used in compute_tensor_product
+ def get_repobj_daughters(self):
+  repList = []
+  if self.daughters is None:
+   for irrep in self.irreps:
+    repGen = irrep.build_irrep_matrices( self.repGen)
+    pList = irrep.build_irrep_momentum_list()
+    irrepTag = irrep.irrepTag
+    refMom = irrep.refMom
+    repList.append( rep_object( repGen, pList, irrepTag, refMom))
+  else:
+   for irrep,daughter in zip(self.irreps,self.daughters):
+    repList.extend( daughter.get_repobj_daughters())
+  return repList
+
 pass ## end class rep_object
 
 ## helper function for quickly creating reference irrep objects
